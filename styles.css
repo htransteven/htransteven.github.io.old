@@ -1,0 +1,123 @@
+body {
+  display: flex;
+  flex-flow:row wrap;
+  margin:0;
+}
+
+.flex {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flexblox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.navbar {
+  display: flex;
+  position: fixed;
+  z-index: 5;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  background-color: black;
+  margin: 0;
+  border-bottom: 5px solid white;
+  box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.5);
+}
+
+.navbar_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin: 3vmin;
+  height: 5vmin;
+}
+
+.navbar_image {
+  background: 0;
+  margin: 0;
+  height: 5vmin;
+  opacity: 0.5;
+}
+
+.navbar_text {
+  visibility: hidden;
+  position: absolute;
+  font-family: arimo;
+  font-size: 2vmin;
+  border: none;
+  background-color: none;
+  color: white;
+  margin-left: 1vmin;
+}
+
+.navbar_image:hover {
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+  z-index: 1;
+  align-self: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgb(241,173,255);
+  background: linear-gradient(0deg, rgb(241,173,255,1) 0%, rgba(111,0,255,1) 100%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.container_image {
+  margin-bottom: 5vmin;
+  object-fit: cover;
+  width: 25vmin;
+  height: 35vmin;
+  opacity: 1;
+  border-top: 10px solid white;
+  border-right: 10px solid white;
+  border-bottom: 10px solid white;
+  border-left: 10px solid white;
+  box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.5);
+}
+
+.container_text {
+  font-family: arimo;
+  font-size: 2vmin;
+  color: white;
+  width: 50%;
+  text-align: center;
+  padding: 0.5vmin;
+  background-color: black;
+  border-top: 5px solid white;
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
+  border-left: 5px solid white;
+  box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.5);
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+}
+
