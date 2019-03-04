@@ -8,6 +8,9 @@ a {
   text-decoration: none;
   outline: 0;
 }
+.no_overflow{
+  overflow: hidden;
+}
 
 .flex {
     width: 100%;
@@ -94,6 +97,7 @@ a {
   flex-flow: row nowrap;
   background: rgb(203,246,255);
   background: linear-gradient(0deg, rgba(203,246,255,1) 0%, rgba(26,65,255,1) 100%);
+  overflow: hidden;
 }
 
 .container_image {
