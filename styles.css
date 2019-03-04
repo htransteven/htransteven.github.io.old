@@ -73,7 +73,6 @@ a {
   display: flex;
   z-index: 1;
   align-self: center;
-  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -81,28 +80,20 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background: rgb(241,173,255);
-  background: linear-gradient(0deg, rgb(241,173,255,1) 0%, rgba(111,0,255,1) 100%);
   min-width: 100%;
   min-height: 100%;
 }
 
-.container_contact{
-  display: flex;
-  z-index: 1;
-  align-self: center;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+.profileBG {
+  flex-flow: column nowrap;
   background: rgb(241,173,255);
   background: linear-gradient(0deg, rgb(241,173,255,1) 0%, rgba(111,0,255,1) 100%);
-  min-width: 100%;
-  min-height: 100%;
+}
+
+.contactBG {
+  flex-flow: row nowrap;
+  background: rgb(203,246,255);
+  background: linear-gradient(0deg, rgba(203,246,255,1) 0%, rgba(26,65,255,1) 100%);
 }
 
 .container_image {
@@ -124,7 +115,7 @@ a {
   color: white;
   width: 50%;
   text-align: center;
-  padding: 0.5vmin;
+  padding: 1.5vmin 0 1.5vmin 0;
   background-color: black;
   border-top: 5px solid white;
   border-right: 5px solid white;
@@ -138,31 +129,37 @@ a {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin: 3vmin;
+  margin: 1vmin;
   width: 35vmin;
   height: 35vmin;
-  background: white;
-  border-top: 10px solid black;
-  border-right: 10px solid black;
-  border-bottom: 10px solid black;
-  border-left: 10px solid black;
-  box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.5);
+}
+
+.contact_card:hover > .contact_card_image {
+  animation: float_up 0.1s linear 1 forwards;
+}
+
+.contact_card:hover > .contact_card_text {
+  animation: fade_in 0.25s linear 1 forwards;
 }
 
 .contact_card_image {
   height: auto;
   width: 20vmin;
-  margin-bottom: 3vmin;
+  margin-bottom: -3vmin;
+  animation: float_down 0.1s linear 1 forwards;
 }
 
 .contact_card_text {
+  opacity: 0;
   font-family: arimo;
-  font-size: 2vmin;
+  font-size: 0.5vmin;
   color: black;
   width: auto;
   text-align: center;
   letter-spacing: 1px;
   padding: 0.5vmin;
+  transform: translateY(3vmin);
+  animation: fade_out 0.25s linear 1 forwards;
 }
 
 @keyframes strobe {
@@ -176,6 +173,51 @@ a {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes float_up{
+  from {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+  to {
+    -webkit-transform: translatey(-4vmin);
+            transform: translatey(-4vmin);
+  }
+}
+
+@keyframes float_down{
+  from {
+    -webkit-transform: translatey(-4vmin);
+            transform: translatey(-4vmin);
+  }
+
+  to {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    font-size: 2vmin;
+  }
+}
+
+@keyframes fade_out {
+  from {
+    opacity: 1;
+    font-size: 2vmin;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 
