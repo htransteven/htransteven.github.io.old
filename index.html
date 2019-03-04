@@ -1,5 +1,80 @@
+<!doctype html>
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Redirecting to Steven's Portfolio</title>
-<meta http-equiv="refresh" content="0; URL=https://htransteven.github.io/profile.html">
-<link rel="canonical" href="https://htransteven.github.io/profile.html">
+<html lang="en-US">
+<head>
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts.js"></script>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+</head>
+<body>
+	<div class="navbar flex">
+		<div class="navbar_item currTab" name="profile">
+			<img class="navbar_image" src="./assets/icons/profile.png">
+		</div>
+		<div class="navbar_item" name="projects">
+			<img class="navbar_image" src="./assets/icons/projects.png">
+		</div>
+		<div class="navbar_item" name="contact">
+			<img class="navbar_image" src="./assets/icons/contact.png">
+		</div>
+	</div>
+	<div class="container profileBG open" id="profile">
+		<img class="container_image" src="./assets/pictures/portrait.jpg">
+		<div class="container_text">
+			My name is Steven Huynh-Tran and I am a first year computer engineering student
+			at the University of California, Santa Barbara. My interests include programming,
+			weight-lifting, and rock climbing. I am currently employed as a ResNet Network
+			Consultant at my university where I am responsible for troubleshooting and
+			repairing technical issues.
+		</div>
+	</div>
+
+	<div class="container contactBG" id="contact">
+		<a href="https://linkedin.com/in/stevenht" target="_blank">
+			<div class="contact_card linkedin">
+				<img class="contact_card_image" src="./assets/icons/linkedin.png">
+				<div class="contact_card_text">
+					https://linkedin.com/in/stevenht
+				</div>
+			</div>
+		</a>
+		<a href="https://github.com/htransteven" target="_blank">
+			<div class="contact_card github">
+				<img class="contact_card_image" src="./assets/icons/github.png">
+				<div class="contact_card_text">
+					https://github.com/htransteven
+				</div>
+			</div>
+		</a>
+		<a href="mailto:htransteven@gmail.com">
+			<div class="contact_card gmail">
+				<img class="contact_card_image" src="./assets/icons/gmail.png">
+				<div class="contact_card_text">
+					htransteven@gmail.com
+				</div>
+			</div>
+		</a>
+		<a href="https://www.instagram.com/stevnotran/">
+			<div class="contact_card instagram">
+				<img class="contact_card_image" src="./assets/icons/instagram.png">
+				<div class="contact_card_text">
+					@stevnotran
+				</div>
+			</div>
+		</a>
+	</div>
+	<script>
+		var buttons = $(".navbar_item");
+		buttons.click(function() {
+
+			fadeAll();
+			setTimeout(function(button) {
+				show($(button).attr("name"));
+			}, 300, this);
+			$(this).addClass("currTab");
+		});
+	</script>
+</body>
+</html>

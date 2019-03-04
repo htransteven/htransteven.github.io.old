@@ -1,6 +1,7 @@
 body {
   display: flex;
   flex-flow:row wrap;
+  background-color: black;
   margin:0;
 }
 
@@ -44,13 +45,18 @@ a {
   text-align: center;
   margin: 3vmin;
   height: 5vmin;
+  opacity: 0.5;
+}
+
+.navbar_item:active > .container{
+  animation: fade_out 1s linear 1 forwards;
 }
 
 .navbar_image {
   background: 0;
   margin: 0;
   height: 5vmin;
-  opacity: 0.5;
+  cursor: pointer;
 }
 
 .navbar_text {
@@ -76,15 +82,15 @@ a {
   display: flex;
   z-index: 1;
   align-self: center;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   min-width: 100%;
   min-height: 100%;
+  animation: fade_out 0.3s linear 1 forwards;
 }
 
 .profileBG {
@@ -94,48 +100,73 @@ a {
 }
 
 .contactBG {
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   background: rgb(203,246,255);
   background: linear-gradient(0deg, rgba(203,246,255,1) 0%, rgba(26,65,255,1) 100%);
   overflow: hidden;
 }
 
+.open {
+  animation: fade_in 0.3s linear 1 forwards;
+}
+
+.contactBG a {
+  margin: 8vmin;
+}
+
 .container_image {
+  opacity: 0;
   margin-bottom: 5vmin;
   object-fit: cover;
   width: 25vmin;
   height: 35vmin;
-  opacity: 1;
-  border-top: 10px solid white;
-  border-right: 10px solid white;
-  border-bottom: 10px solid white;
-  border-left: 10px solid white;
+  border: 8px solid white;
   box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.5);
+  animation: fade_in 1s linear 1 forwards;
+  animation-delay: 0.5s;
 }
 
 .container_text {
+  opacity: 0;
   font-family: arimo;
   font-size: 2vmin;
   color: white;
   width: 50%;
   text-align: center;
-  padding: 1.5vmin 0 1.5vmin 0;
+  padding: 1.5vmin 1vmin 1.5vmin 1vmin;
   background-color: black;
-  border-top: 5px solid white;
-  border-right: 5px solid white;
-  border-bottom: 5px solid white;
-  border-left: 5px solid white;
+  border: 5px solid white;
   box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.5);
+  animation: fade_in 1s linear 1 forwards;
+  animation-delay: 1s;
 }
 
 .contact_card {
+  opacity: 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin: 1vmin;
-  width: 35vmin;
-  height: 35vmin;
+  width: 20vmin;
+  height: 20vmin;
+  
+  animation: fade_in 1s linear 1 forwards;
+}
+
+.linkedin {
+  animation-delay: 0.5s;
+}
+
+.github {
+  animation-delay: 0.75s;
+}
+
+.gmail {
+  animation-delay: 1s;
+}
+
+.instagram {
+  animation-delay: 1.25s;
 }
 
 .contact_card:hover > .contact_card_image {
@@ -143,7 +174,7 @@ a {
 }
 
 .contact_card:hover > .contact_card_text {
-  animation: fade_in 0.25s linear 1 forwards;
+  animation: fade_text_in 0.25s linear 1 forwards;
 }
 
 .contact_card_image {
@@ -163,7 +194,7 @@ a {
   letter-spacing: 1px;
   padding: 0.5vmin;
   transform: translateY(3vmin);
-  animation: fade_out 0.25s linear 1 forwards;
+  animation: fade_text_out 0.25s linear 1 forwards;
 }
 
 @keyframes strobe {
@@ -203,7 +234,7 @@ a {
   }
 }
 
-@keyframes fade_in {
+@keyframes fade_text_in {
   from {
     opacity: 0;
   }
@@ -211,17 +242,36 @@ a {
   to {
     opacity: 1;
     font-size: 2vmin;
+  }
+}
+
+@keyframes fade_text_out {
+  from {
+    opacity: 1;
+    font-size: 2vmin;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes fade_out {
-  from {
+  0% {
     opacity: 1;
-    font-size: 2vmin;
   }
 
-  to {
+  100% {
     opacity: 0;
   }
 }
-
