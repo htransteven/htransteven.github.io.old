@@ -211,8 +211,15 @@ a {
 .main_folder {
   height: 25vmin;
   width: 25vmin;
-  animation: shake 3s linear infinite;
   cursor: pointer;
+}
+
+.waiting {
+  animation: shake 3s linear infinite;
+}
+
+.closing {
+  animation: zoom_out 0.5s linear forwards;
 }
 
 .portfolio_file_image {
@@ -402,5 +409,17 @@ a {
   }
   20% {
     transform: rotateZ(0);
+  }
+}
+
+@keyframes zoom_out {
+  from {
+    height: 25vmin;
+    width: 25vmin;
+  }
+
+  to {
+    height: 0;
+    width: 0;
   }
 }

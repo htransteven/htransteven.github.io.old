@@ -39,14 +39,19 @@ function hideFolders(){
 }
 
 function showFolders(){
-	$(".main_folder").css("display", "none");
-	var files = $(".portfolio_file");
-	files.each(function(index) {
+	$(".main_folder").removeClass("waiting");
+	$(".main_folder").addClass("closing");
+	setTimeout(function(){
+		$(".main_folder").css("display", "none");
+		var files = $(".portfolio_file");
+		files.each(function(index) {
 		$(files[index]).css("display", "flex");
 		setTimeout(function(files, index) {
 			$(files[index]).addClass("open");
-		}, 500, files, index)
+		}, 400, files, index)
 	});
+	}, 600);
+	
 }
 
 function showFile(name){
