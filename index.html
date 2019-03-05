@@ -7,17 +7,18 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="scripts.js"></script>
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+	<!--Made by Steven Huynh-Tran-->
 </head>
 <body>
 	<div class="navbar flex">
 		<div class="navbar_item currTab" name="profile">
-			<img class="navbar_image" src="./assets/icons/profile.png">
+			<img class="navbar_image" src="./assets/icons/black/profile.png">
 		</div>
 		<div class="navbar_item" name="projects">
-			<img class="navbar_image" src="./assets/icons/projects.png">
+			<img class="navbar_image" src="./assets/icons/black/projects.png">
 		</div>
 		<div class="navbar_item" name="contact">
-			<img class="navbar_image" src="./assets/icons/contact.png">
+			<img class="navbar_image" src="./assets/icons/black/contact.png">
 		</div>
 	</div>
 	<div class="container profileBG open" id="profile">
@@ -34,7 +35,7 @@
 	<div class="container contactBG" id="contact">
 		<a href="https://linkedin.com/in/stevenht" target="_blank">
 			<div class="contact_card linkedin">
-				<img class="contact_card_image" src="./assets/icons/linkedin.png">
+				<img class="contact_card_image" src="./assets/icons/white/linkedin.png">
 				<div class="contact_card_text">
 					https://linkedin.com/in/stevenht
 				</div>
@@ -42,7 +43,7 @@
 		</a>
 		<a href="https://github.com/htransteven" target="_blank">
 			<div class="contact_card github">
-				<img class="contact_card_image" src="./assets/icons/github.png">
+				<img class="contact_card_image" src="./assets/icons/white/github.png">
 				<div class="contact_card_text">
 					https://github.com/htransteven
 				</div>
@@ -50,7 +51,7 @@
 		</a>
 		<a href="mailto:htransteven@gmail.com">
 			<div class="contact_card gmail">
-				<img class="contact_card_image" src="./assets/icons/gmail.png">
+				<img class="contact_card_image" src="./assets/icons/white/gmail.png">
 				<div class="contact_card_text">
 					htransteven@gmail.com
 				</div>
@@ -58,7 +59,7 @@
 		</a>
 		<a href="https://www.instagram.com/stevnotran/">
 			<div class="contact_card instagram">
-				<img class="contact_card_image" src="./assets/icons/instagram.png">
+				<img class="contact_card_image" src="./assets/icons/white/instagram.png">
 				<div class="contact_card_text">
 					@stevnotran
 				</div>
@@ -66,13 +67,12 @@
 		</a>
 	</div>
 	<script>
+		initialLoad();
+
 		var buttons = $(".navbar_item");
 		buttons.click(function() {
 
-			fadeAll();
-			setTimeout(function(button) {
-				show($(button).attr("name"));
-			}, 300, this);
+			show($(this).attr("name"));
 			$(this).addClass("currTab");
 		});
 	</script>

@@ -1,19 +1,28 @@
-function fadeAll(){
+function initialLoad(){
+	show("profile");
+}
+
+function show(name) {
+
 	var containers = $(".container");
 	containers.each(function(index) {
-		$(containers[index]).removeClass("open");
+		if($(containers[index]).attr("id") != name){
+			$(containers[index]).removeClass("open");
+		}
 		setTimeout(function(containers, index){
-			$(containers[index]).css("display", "none");
+			if($(containers[index]).attr("id") != name){
+				$(containers[index]).css("display", "none");
+			}
 		}, 300, containers, index);
 	});
 
 	var buttons = $(".navbar_item");
 	buttons.each(function(index) {
-		$(buttons[index]).removeClass("currTab");
+		if($(buttons[index]).attr("name") != name){
+			$(buttons[index]).removeClass("currTab");
+		}
 	});
-}
 
-function show(name) {
 	var containerTo = $("#" + name);
 	containerTo.css("display", "flex");
 	containerTo.addClass("open");

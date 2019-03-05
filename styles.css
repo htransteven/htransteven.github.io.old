@@ -31,10 +31,10 @@ a {
   z-index: 5;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  background-color: black;
+  background-color: white;
   margin: 0;
-  border-bottom: 5px solid white;
-  box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.5);
+  box-shadow: 0px -8.5vmin 2vmin 10vmin rgba(0,0,0,0.5);
+  padding-bottom: 0.2vmin;
 }
 
 .navbar_item {
@@ -57,17 +57,6 @@ a {
   margin: 0;
   height: 5vmin;
   cursor: pointer;
-}
-
-.navbar_text {
-  visibility: hidden;
-  position: absolute;
-  font-family: arimo;
-  font-size: 2vmin;
-  border: none;
-  background-color: none;
-  color: white;
-  margin-left: 1vmin;
 }
 
 .navbar_image:hover {
@@ -95,13 +84,11 @@ a {
 
 .profileBG {
   flex-flow: column nowrap;
-  background: rgb(241,173,255);
   background: linear-gradient(0deg, rgb(241,173,255,1) 0%, rgba(111,0,255,1) 100%);
 }
 
 .contactBG {
   flex-flow: row wrap;
-  background: rgb(203,246,255);
   background: linear-gradient(0deg, rgba(203,246,255,1) 0%, rgba(26,65,255,1) 100%);
   overflow: hidden;
 }
@@ -121,8 +108,8 @@ a {
   width: 25vmin;
   height: 35vmin;
   border: 8px solid white;
-  box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.5);
-  animation: fade_in 1s linear 1 forwards;
+  
+  animation: fade_down 0.35s linear 1 forwards;
   animation-delay: 0.5s;
 }
 
@@ -130,15 +117,15 @@ a {
   opacity: 0;
   font-family: arimo;
   font-size: 2vmin;
-  color: white;
+  color: black;
   width: 50%;
   text-align: center;
   padding: 1.5vmin 1vmin 1.5vmin 1vmin;
-  background-color: black;
-  border: 5px solid white;
-  box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.5);
-  animation: fade_in 1s linear 1 forwards;
-  animation-delay: 1s;
+  background-color: white;
+  
+  box-shadow: 0px 2vmin 1vmin -1vmin rgba(0,0,0,0.5);
+  animation: fade_down 0.35s linear 1 forwards;
+  animation-delay: 0.75s;
 }
 
 .contact_card {
@@ -188,7 +175,7 @@ a {
   opacity: 0;
   font-family: arimo;
   font-size: 0.5vmin;
-  color: black;
+  color: white;
   width: auto;
   text-align: center;
   letter-spacing: 1px;
@@ -253,6 +240,20 @@ a {
 
   to {
     opacity: 0;
+  }
+}
+
+@keyframes fade_down {
+  from {
+    opacity: 0;
+    transform: translateY(-2vmin);
+    box-shadow: 0px 7vmin 5vmin -2vmin rgba(0,0,0,0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0px 2vmin 1vmin -1vmin rgba(0,0,0,0.5);
   }
 }
 
