@@ -1,5 +1,7 @@
 function initialLoad(){
 	show("profile");
+	hideFolders();
+	hideFiles();
 }
 
 function show(name) {
@@ -9,7 +11,7 @@ function show(name) {
 		if($(containers[index]).attr("id") != name){
 			$(containers[index]).removeClass("open");
 		}
-		setTimeout(function(containers, index){
+		setTimeout(function(containers, index) {
 			if($(containers[index]).attr("id") != name){
 				$(containers[index]).css("display", "none");
 			}
@@ -26,4 +28,39 @@ function show(name) {
 	var containerTo = $("#" + name);
 	containerTo.css("display", "flex");
 	containerTo.addClass("open");
+}
+
+function hideFolders(){
+	var files = $(".portfolio_file");
+	files.each(function(index) {
+		$(files[index]).css("display", "none");
+		$(files[index]).removeClass("open");
+	});
+}
+
+function showFolders(){
+	$(".main_folder").css("display", "none");
+	var files = $(".portfolio_file");
+	files.each(function(index) {
+		$(files[index]).css("display", "flex");
+		setTimeout(function(files, index) {
+			$(files[index]).addClass("open");
+		}, 500, files, index)
+	});
+}
+
+function showFile(name){
+	var file = $("#" + name);
+	file.css("display", "flex");
+	setTimeout(function(file) {
+		file.addClass("open");
+	}, 200, file)
+}
+
+function hideFiles(){
+	var texts = $(".textfile_window");
+	texts.each(function(index) {
+		$(texts[index]).css("display", "none");
+		$(texts[index]).removeClass("open");
+	});
 }

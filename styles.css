@@ -9,9 +9,6 @@ a {
   text-decoration: none;
   outline: 0;
 }
-.no_overflow{
-  overflow: hidden;
-}
 
 .flex {
     width: 100%;
@@ -33,7 +30,7 @@ a {
   justify-content: flex-start;
   background-color: white;
   margin: 0;
-  box-shadow: 0px -8.5vmin 2vmin 10vmin rgba(0,0,0,0.5);
+  box-shadow: 0px 0.5vmin 2vmin 1vmin rgba(0,0,0,0.5);
   padding-bottom: 0.2vmin;
 }
 
@@ -91,6 +88,11 @@ a {
   flex-flow: row wrap;
   background: linear-gradient(0deg, rgba(203,246,255,1) 0%, rgba(26,65,255,1) 100%);
   overflow: hidden;
+}
+
+.portfolioBG {
+  flex-flow: row wrap;
+  background: linear-gradient(0deg, rgba(218,255,135,1) 0%, rgba(49,152,0,1) 100%);
 }
 
 .open {
@@ -184,6 +186,107 @@ a {
   animation: fade_text_out 0.25s linear 1 forwards;
 }
 
+.portfolio_window {
+  opacity: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  animation: fade_in 1s linear 1 forwards;
+  animation-delay: 0.5s;
+}
+
+.portfolio_file {
+  opacity: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 5vmin;
+}
+
+.main_folder {
+  height: 25vmin;
+  width: 25vmin;
+  animation: shake 3s linear infinite;
+  cursor: pointer;
+}
+
+.portfolio_file_image {
+  height: 10vmin;
+  width: 10vmin;
+}
+
+.portfolio_file_text {
+  font-family: arimo;
+  font-size: 2vmin;
+  color: white;
+  width: auto;
+  text-align: center;
+  letter-spacing: 1px;
+  transform: translateY(1vmin);
+  
+}
+
+.textfile_window {
+  opacity: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -40%);
+  background-color: rgba(186, 197, 255, 0.8);
+  width: 80vw;
+  height: 70vh;
+  padding-top: 2vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.textfile_text_body{
+  align-self: flex-start;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  width: 80vw;
+  font-family: arimo;
+  font-size: 3vmin;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.textfile_text_header {
+  align-self: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1vw, 1vh);
+  width: 80vw;
+  font-family: arimo;
+  font-size: 2vmin;
+  color: white;
+  letter-spacing: 1px;
+  padding-left: 0.25vw;
+}
+
+.button_exit{
+  position: absolute;
+  top:0;
+  right: 0;
+  transform: translate(-1vw, 1vh);
+  font-family: arimo;
+  font-size: 2vmin;
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
 @keyframes strobe {
   0% {
     opacity: 0.5;
@@ -274,5 +377,30 @@ a {
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  4% {
+    transform: rotateZ(15deg);
+  }
+
+  8% {
+    transform: rotateZ(-10deg);
+  }
+  
+  12% {
+    transform: rotateZ(10deg);
+  }
+
+  16% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(0);
   }
 }
