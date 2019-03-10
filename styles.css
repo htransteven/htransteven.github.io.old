@@ -21,14 +21,13 @@ a {
     flex-flow: row nowrap;
 }
 
-
 .navbar {
   display: flex;
   position: fixed;
   z-index: 5;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  background-color: white;
+  background-color: black;
   margin: 0;
   box-shadow: 0px 0.5vmin 2vmin 1vmin rgba(0,0,0,0.5);
   padding-bottom: 0.2vmin;
@@ -41,7 +40,7 @@ a {
   text-decoration: none;
   text-align: center;
   margin: 3vmin;
-  height: 5vmin;
+  height: 3vmin;
   opacity: 0.5;
 }
 
@@ -52,7 +51,7 @@ a {
 .navbar_image {
   background: 0;
   margin: 0;
-  height: 5vmin;
+  height: 3vmin;
   cursor: pointer;
 }
 
@@ -110,7 +109,7 @@ a {
   width: 25vmin;
   height: 35vmin;
   border: 8px solid white;
-  
+
   animation: fade_down 0.35s linear 1 forwards;
   animation-delay: 0.5s;
 }
@@ -124,7 +123,7 @@ a {
   text-align: center;
   padding: 1.5vmin 1vmin 1.5vmin 1vmin;
   background-color: white;
-  
+
   box-shadow: 0px 2vmin 1vmin -1vmin rgba(0,0,0,0.5);
   animation: fade_down 0.35s linear 1 forwards;
   animation-delay: 0.75s;
@@ -138,7 +137,7 @@ a {
   align-items: center;
   width: 20vmin;
   height: 20vmin;
-  
+
   animation: fade_in 1s linear 1 forwards;
 }
 
@@ -235,7 +234,7 @@ a {
   text-align: center;
   letter-spacing: 1px;
   transform: translateY(1vmin);
-  
+
 }
 
 .textfile_window {
@@ -399,7 +398,7 @@ a {
   8% {
     transform: rotateZ(-10deg);
   }
-  
+
   12% {
     transform: rotateZ(10deg);
   }
