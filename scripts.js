@@ -1,11 +1,6 @@
 function init() {
 
 	loadPageButtons();
-
-	$(document).scroll(function() {
-
-	});
-
 }
 
 var currentMainPage = 0; //Home
