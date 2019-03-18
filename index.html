@@ -5,157 +5,75 @@
 	<title>Portfolio</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" crossorigin="anonymous">
 	<script src="scripts.js"></script>
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 	<!--Made by Steven Huynh-Tran-->
 </head>
 <body>
-	<div class="navbar flex">
-		<div class="navbar_item currTab" name="profile">
-			<img class="navbar_image" src="./assets/icons/white/profile.png">
+	<div class="container welcome">
+		<div class="welcome_text white">
+			STEVEN HUYNH-TRAN
 		</div>
-		<div class="navbar_item" name="portfolio">
-			<img class="navbar_image" src="./assets/icons/white/portfolio.png">
+		<i class="fas fa-angle-down next_page white" name="profile"></i>
+	</div>
+	<div class="container profile">
+		<div class="page column profile-home">
+			<i class="fas fa-angle-up prev_page white" name="welcome"></i>
+			<i class="fas fa-angle-left left_page white" name="profile-3"></i>
+			<div class="welcome_text white">
+				WHO AM I?
+			</div>
+			<!--
+			<svg class="LR-arrows">
+			  <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgb(255,0,0);stroke-width:2" />
+			  Sorry, your browser does not support inline SVG.
+			</svg>
+			-->
+			<i class="fas fa-angle-right right_page white" name="profile-1"></i>
+			<i class="fas fa-angle-down next_page white" name="languages"></i>
 		</div>
-		<div class="navbar_item" name="contact">
-			<img class="navbar_image" src="./assets/icons/white/contact.png">
+		<div class="page column profile-1">
+			<i class="fas fa-angle-up prev_page white" name="welcome"></i>
+			<i class="fas fa-angle-left left_page white" name="profile-home"></i>
+			<div class="welcome_text white">
+				CODER
+			</div>
+			<i class="fas fa-angle-right right_page white" name="profile-2"></i>
+			<i class="fas fa-angle-down next_page white" name="languages"></i>
+		</div>
+		<div class="page column profile-2">
+			<i class="fas fa-angle-up prev_page white" name="welcome"></i>
+			<i class="fas fa-angle-left left_page white" name="profile-2"></i>
+			<div class="welcome_text white">
+				STUDENT
+			</div>
+			<i class="fas fa-angle-right right_page white" name="profile-3"></i>
+			<i class="fas fa-angle-down next_page white" name="languages"></i>
+		</div>
+		<div class="page column profile-3">
+			<i class="fas fa-angle-up prev_page white" name="welcome"></i>
+			<i class="fas fa-angle-left left_page white" name="profile-3"></i>
+			<div class="welcome_text white">
+				ROCK CLIMBER
+			</div>
+			<i class="fas fa-angle-right right_page white" name="profile-home"></i>
+			<i class="fas fa-angle-down next_page white" name="languages"></i>
 		</div>
 	</div>
-	<div class="container profileBG open" id="profile">
-		<img class="container_image" src="./assets/pictures/portrait.jpg">
-		<div class="container_text">
-			My name is Steven Huynh-Tran and I am a first year computer engineering student
-			at the University of California, Santa Barbara. My interests include programming,
-			weight-lifting, and rock climbing. I am currently employed as a ResNet Network
-			Consultant at my university where I am responsible for troubleshooting and
-			repairing technical issues.
-		</div>
-	</div>
-
-	<div class="container contactBG" id="contact">
-		<a href="https://linkedin.com/in/stevenht" target="_blank">
-			<div class="contact_card linkedin">
-				<img class="contact_card_image" src="./assets/icons/white/linkedin.png">
-				<div class="contact_card_text">
-					https://linkedin.com/in/stevenht
-				</div>
-			</div>
-		</a>
-		<a href="https://github.com/htransteven" target="_blank">
-			<div class="contact_card github">
-				<img class="contact_card_image" src="./assets/icons/white/github.png">
-				<div class="contact_card_text">
-					https://github.com/htransteven
-				</div>
-			</div>
-		</a>
-		<a href="mailto:htransteven@gmail.com">
-			<div class="contact_card gmail">
-				<img class="contact_card_image" src="./assets/icons/white/gmail.png">
-				<div class="contact_card_text">
-					htransteven@gmail.com
-				</div>
-			</div>
-		</a>
-		<a href="https://www.instagram.com/stevnotran/">
-			<div class="contact_card instagram">
-				<img class="contact_card_image" src="./assets/icons/white/instagram.png">
-				<div class="contact_card_text">
-					@stevnotran
-				</div>
-			</div>
-		</a>
-	</div>
-
-	<div class="container portfolioBG" id="portfolio">
-		<div class="portfolio_window">
-			<img class="main_folder waiting" src="./assets/icons/white/portfolio.png">
-			<div class="portfolio_file" name="work_experience">
-				<img class="portfolio_file_image" src="./assets/icons/white/txtfile.png">
-				<div class="portfolio_file_text">
-					work_experience
-				</div>
-			</div>
-			<div class="portfolio_file" name="projects">
-				<img class="portfolio_file_image" src="./assets/icons/white/txtfile.png">
-				<div class="portfolio_file_text">
-					projects
-				</div>
-			</div>
-			<div class="portfolio_file" name="newdoc">
-				<img class="portfolio_file_image" src="./assets/icons/white/txtfile.png">
-				<div class="portfolio_file_text">
-					New Document (208)
-				</div>
-			</div>
-		</div>
-		<div class="textfile_window" id="work_experience">
-			<div class="textfile_text_header">
-				htransteven/work_experience.txt
-			</div>
-			<pre class="textfile_text_body">
-Network Consultant, UCSB (2019):
--TBA
-
-HIP Intern, Northrop Grumman (2018):
--Developed a macro in VBA capable of sorting, filtering, and extracting Microsoft Project data while formatting it into a presentable PowerPoint
-			</pre>
-			<div class="button_exit">
-				X
-			</div>
-		</div>
-		<div class="textfile_window" id="projects">
-			<div class="textfile_text_header">
-				htransteven/projects.txt
-			</div>
-			<pre class="textfile_text_body">
-Portfolio Website (2019):
--You're already here! What do you think? I would love to here any tips or suggestions you may have!
-
-Bomberman Clone (2017):
--For my AP Computer Science (APCS) final project, I replicated the vintage game Bomberman! Using LibGDX, I was able to make a fairly similar copy of the game including the fundamental concepts, easily-customizable maps via HashMaps, and power ups. The game was never fully finished and fine-tuned so a few bugs exist here and there. You can find the main components of the code on my GitHub.
-			</pre>
-			<div class="button_exit">
-				X
-			</div>
-		</div>
-		<div class="textfile_window" id="newdoc">
-			<div class="textfile_text_header">
-				htransteven/New Document (208).txt
-			</div>
-			<pre class="textfile_text_body">
-			</pre>
-			<div class="button_exit">
-				X
-			</div>
+	<div class="container languages">
+		<i class="fas fa-angle-up prev_page white" name="profile"></i>
+		<div class="languages_icons white">
+			<i class="devicon-cplusplus-line"></i>
+			<i class="devicon-java-plain"></i>
+			<i class="devicon-html5-plain"></i>
+			<i class="devicon-javascript-plain"></i>
+			<i class="devicon-css3-plain"></i>
 		</div>
 	</div>
 	<script>
-		initialLoad();
-
-		//Load Buttons
-		var buttons = $(".navbar_item");
-		buttons.click(function() {
-
-			show($(this).attr("name"));
-			$(this).addClass("currTab");
-		});
-
-		//Load Portfolio Intro
-		var port_main = $(".main_folder");
-		port_main.click(function(){
-			showFolders();
-		});
-
-		var port_files = $(".portfolio_file");
-		port_files.click(function() {
-			showFile($(this).attr("name"));
-		});
-
-		var button_exit = $(".button_exit");
-		button_exit.click(function() {
-			hideFiles();
-		})
+		init();
 	</script>
 </body>
 </html>
