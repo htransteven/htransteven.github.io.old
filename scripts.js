@@ -12,9 +12,12 @@ function loadPageButtons() {
 
 	nextbuttons.click(function(){
 		var containers = $(".container");
-		currentMainPage++;
 
 		hidePageTransitions();
+		if(isProfileHome()) {
+			shrinkArrows();
+		}
+		currentMainPage++;
 
 		setTimeout(function(){
 			containers.each(function() {
@@ -35,9 +38,13 @@ function loadPageButtons() {
 
 	prevbuttons.click(function(){
 			var containers = $(".container");
-			currentMainPage--;
+
 
 			hidePageTransitions();
+			if(isProfileHome()) {
+				shrinkArrows();
+			}
+			currentMainPage--;
 
 			setTimeout(function(){
 				containers.each(function() {
@@ -59,13 +66,16 @@ function loadPageButtons() {
 	rightbuttons.click(function(){
 			var pages = $(".page");
 
+			hidePageTransitions();
+			if(isProfileHome()) {
+				shrinkArrows();
+			}
+
 			if(currentProfilePage < pages.length - 1){
 				currentProfilePage++;
 			} else {
 				currentProfilePage = 0;
 			}
-
-			hidePageTransitions();
 
 			setTimeout(function(){
 				pages.each(function() {
@@ -87,13 +97,16 @@ function loadPageButtons() {
 	leftbuttons.click(function(){
 			var pages = $(".page");
 
+			hidePageTransitions();
+			if(isProfileHome()) {
+				shrinkArrows();
+			}
+
 			if(currentProfilePage > 0){
 				currentProfilePage--;
 			} else {
 				currentProfilePage = pages.length - 1;
 			}
-
-			hidePageTransitions();
 
 			setTimeout(function(){
 				pages.each(function() {
@@ -200,4 +213,34 @@ function isProfileHome() {
 
 function extendArrows() {
 	$(".profile-arrows").css("width", "15vw");
+}
+
+function shrinkArrows() {
+	$(".profile-arrows").css("width", "0");
+}
+
+function trackDistance() {
+
+    var mX, mY, distance1, distance2, distance3, distance4;
+    var $element1  = $('.next_page');
+		var $element2  = $('.prev_page');
+		var $element3  = $('.right_page');
+		var $element4  = $('.left_page');
+
+    function calculateDistance(elem, mouseX, mouseY) {
+        return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+    }
+
+    $(document).mousemove(function(e) {
+        mX = e.pageX;
+        mY = e.pageY;
+        distance1 = calculateDistance($element1, mX, mY);
+				distance2 = calculateDistance($element2, mX, mY);
+				distance3 = calculateDistance($element3, mX, mY);
+				distance4 = calculateDistance($element4, mX, mY);
+				if(distance1 < 1){
+
+				}
+    });
+
 }

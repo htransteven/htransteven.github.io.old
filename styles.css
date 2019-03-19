@@ -9,6 +9,7 @@
 }
 
 .white { color: white; }
+.black { color: black; }
 .green { color: green; }
 .purple { color: purple; }
 
@@ -41,6 +42,7 @@ body {
 
 .welcome_text {
   font-family: DIN-ALT;
+  z-index: 555;
   font-size: 5vw;
   width: 100%;
   line-height: 3vw;
@@ -52,6 +54,7 @@ body {
   font-size: 10vmin;
   text-align: center;
   animation: 1.2s glow ease-in-out alternate infinite;
+  z-index: 999;
 }
 
 .next_page {
@@ -88,7 +91,7 @@ body {
   position: absolute;
   height: 5px;
   display: flex;
-  transform: translateY(5vh);
+  transform: translateY(8vh);
   width: 0;
   transition: 0.5s width;
 }
@@ -133,25 +136,56 @@ body {
 .profile-1 {
   position: absolute;
   right: -200%;
+}
+
+.profile-text {
+  font-family: DIN-ALT;
+  z-index: 555;
+  font-size: 5vw;
+  width: 100%;
+  line-height: 3vw;
+  text-align: center;
+  margin: auto;
+}
+
+.profile-bg1 {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
   background-image: url("./assets/pictures/laptop.jpg");
   background-size: cover;
-  filter: grayscale(100%);
+  filter: blur(2px) grayscale(100%) brightness(0.7);
 }
 
 .profile-2 {
   position: absolute;
   right: -400%;
+}
+
+.profile-bg2 {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
   background-image: url("./assets/pictures/sancat.jpg");
   background-size: cover;
-  filter: grayscale(100%);
+  filter: blur(2px) grayscale(100%) brightness(0.7);
 }
 
 .profile-3 {
   position: absolute;
   right: -600%;
+}
+
+.profile-bg3 {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
   background-image: url("./assets/pictures/rockclimbing.jpg");
   background-size: cover;
-  filter: grayscale(100%);
+  filter: blur(2px) grayscale(100%) brightness(0.7);
 }
 
 .column {
@@ -167,24 +201,63 @@ body {
   align-items: center;
 }
 
-.languages_icons{
+.icon_container{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10vw;
   width: 100%;
-  line-height: 3vw;
-  text-align: center;
   margin:auto;
 }
 
-.languages_icons i {
-  margin: auto;
+.icon_card {
+  opacity: 0.7;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: calc(100% + 20vh);
+  width: 15%;
 }
 
-.languages_icons i:hover {
-  transition: font-size 0.2s;
+.icon_line {
+  height: 5px;
+  width: 0;
+}
+
+.icon_card i {
+  font-size: 10vw;
+  margin-bottom: 1vw;
+}
+
+.icon_card:hover {
+  opacity: 1;
+  transition: width 0.3s;
+  width: 20%;
+}
+
+.icon_card:hover > .icon_card_text {
+  transition: font-size 1s;
+  font-size: 1.5vw;
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+.icon_card:hover > .icon_card i {
+  transition: font-size 1s;
   font-size: 15vw;
+}
+
+.icon_card:hover > .icon_line {
+  transition: width 0.3s;
+  width: 100%
+}
+
+.icon_card_text {
+  color: white;
+  opacity: 0;
+  font-size: 0.5vw;
+  text-align: center;
 }
 
 .fadeIn {
