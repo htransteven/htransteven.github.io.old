@@ -23,6 +23,9 @@ function loadPageButtons() {
 			});
 
 			setTimeout(function() {
+				if(isProfileHome()) {
+					extendArrows();
+				}
 				showPageTransitions();
 			}, 2000);
 		}, 500);
@@ -43,6 +46,9 @@ function loadPageButtons() {
 				});
 
 				setTimeout(function() {
+					if(isProfileHome()) {
+						extendArrows();
+					}
 					showPageTransitions();
 				}, 2000);
 			}, 500);
@@ -68,6 +74,9 @@ function loadPageButtons() {
 				});
 
 				setTimeout(function() {
+					if(isProfileHome()) {
+						extendArrows();
+					}
 					showPageTransitions();
 				}, 2000);
 			}, 500);
@@ -93,6 +102,9 @@ function loadPageButtons() {
 				});
 
 				setTimeout(function() {
+					if(isProfileHome()) {
+						extendArrows();
+					}
 					showPageTransitions();
 				}, 2000);
 			}, 500);
@@ -178,4 +190,14 @@ function showPageTransitions() {
 			$(this).removeClass("fadeIn");
 		});
 	}, 500);
+}
+
+function isProfileHome() {
+	if(currentMainPage == 1 && currentProfilePage == 0) {
+		return true;
+	}
+}
+
+function extendArrows() {
+	$(".profile-arrows").css("width", "15vw");
 }

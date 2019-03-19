@@ -84,6 +84,39 @@ body {
   margin: auto;
 }
 
+.profile-arrows {
+  position: absolute;
+  height: 5px;
+  display: flex;
+  transform: translateY(5vh);
+  width: 0;
+  transition: 0.5s width;
+}
+
+.arrow-line {
+  color: white;
+  stroke: white;
+  stroke-width: 3px;
+}
+
+.arrow-head {
+  height: 5px;
+  width: 5px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  position: absolute;
+}
+
+.arrow-r {
+  right: 0;
+  transform: translateX(10px) translateY(-3px) rotateZ(-45deg);
+}
+
+.arrow-l {
+  left: 0;
+  transform: translateX(-10px) translateY(-3px) rotateZ(135deg);
+}
+
 .left_page, .right_page {
   position: absolute;
 }
