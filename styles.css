@@ -86,7 +86,7 @@ body {
 }
 
 .lineExtend {
-  animation: lineExtend 0.3s ease-in-out forwards;
+  animation: lineExtend 1s ease-in-out forwards;
 }
 
 .occupation-text {
@@ -139,11 +139,15 @@ body {
 }
 
 @keyframes lineExtend {
-  from {
+  0% {
     width: 0;
   }
 
-  to {
+  80% {
+    width: 110%;
+  }
+
+  100% {
     width: 100%;
   }
 }
