@@ -12,16 +12,19 @@ function loadKeys() {
 
       switch (e.keyCode) {
         case 37: //LEFT
-
+					site_x--;
 					grid.moveTo(site_x, site_y);
 					break;
         case 39: //RIGHT
+					site_x++;
 					grid.moveTo(site_x, site_y);
 					break;
         case 38: //UP
+					site_y--;
 					grid.moveTo(site_x, site_y);
 					break;
         case 40: //DOWN
+					site_y++;
 					grid.moveTo(site_x, site_y);
 					break;
 			}
@@ -70,7 +73,7 @@ class Grid {
       var x_trans = "calc(" + x + "* 100vw)";
       var y_trans = "calc(" + y + "* 100vh)";
       page.elem.css("position", "absolute");
-      page.elem.css("transform", "translateX(" + x_trans + ") translateY(" + y_trans + ") translateZ(0)");
+      page.elem.css("transform", "translateX(" + x_trans + ") translateY(" + y_trans + ") translateZ(-200vw)");
     }
 	}
 
@@ -80,7 +83,7 @@ class Grid {
 			var page = pages[i];
 			if(page.x != this.site_xpos || page.y != this.site_ypos){
 				var elem = page.elem;
-				elem.css("transition", "opacity 0.5s");
+				elem.css("transition", "opacity 0.75s");
 				elem.css("opacity", "1");
 			}
 		}
@@ -92,7 +95,7 @@ class Grid {
 			var page = pages[i];
 			if(page.x != this.site_xpos || page.y != this.site_ypos){
 				var elem = page.elem;
-				elem.css("transition", "opacity 0.5s");
+				elem.css("transition", "opacity 0.75s");
 				elem.css("opacity", "0");
 			}
 		}
@@ -111,7 +114,6 @@ class Grid {
 	showAllPages() {
 		var pages = this.pages;
 		for(var i = 0; i < pages.length; i++){
-			console.log("showing");
 			var page = pages[i];
 			page.elem.css("display", "flex");
 		}
@@ -127,6 +129,18 @@ class Grid {
 		}
 	}
 
+	updateZ(x, y){
+		var pages = this.pages;
+		for(var i = 0; i < pages.length; i++){
+			var pageTemp = pages[i];
+			if(pageTemp.x == this.site_xpos && pageTemp.y == this.site_ypos){
+				pageTemp.elem.css("z-index", "999");
+			} else {
+				pageTemp.elem.css("z-index", "1");
+			}
+		}
+	}
+
 	zoomAllOut() {
 		this.showAllPages();
 		var pages = this.pages;
@@ -136,30 +150,28 @@ class Grid {
 	    var y = page.y;
 			var x_trans = "calc(" + x + "* 100vw)";
       var y_trans = "calc(" + y + "* 100vh)";
-			page.elem.css("transition", "transform 1s");
+			page.elem.css("transition", "transform 0.8s");
 			page.elem.css("transform", "translateX(" + x_trans + ") translateY(" + y_trans + ") translateZ(-200vmin)");
+			this.updateZ(page.x, page.y);
 		}
 	}
 
   zoomIn(page) {
-    page.elem.css("transition", "transform 1s");
+		this.updateZ(page.x, page.y);
+    page.elem.css("transition", "transform 0.8s");
     page.elem.css("transform", "translateX(0) translateY(0) translateZ(0vmin)");
   }
 
 	moveTo(x, y){
 		var page = this.findPage(x, y);
-		this.zoomAllOut();
-		this.fadeIn();
+		this.zoomAllOut(); //1s
+
 		setTimeout(function(grid, page, x, y) {
-			grid.zoomIn(page);
 			grid.site_xpos = x;
 			grid.site_ypos = y;
-			grid.fadeOut();
-			setTimeout(function(grid) {
-				grid.hideAllPages();
-			}, 1000, grid);
+			grid.zoomIn(page); //1s
+		}, 800, this, page, x, y);
 
-		}, 1250, this, page, x, y);
 	}
 }
 

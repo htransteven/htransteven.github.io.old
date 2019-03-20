@@ -8,8 +8,12 @@
 .green { color: green; }
 .purple { color: purple; }
 
-.bgblack { background-color: black; }
-.bgwhite { background-color: white; }
+.bgblack {
+  background-color: black;
+}
+.bgwhite {
+  background-color: white;
+}
 
 body {
   background-color: black;
