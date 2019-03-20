@@ -1,20 +1,10 @@
 @font-face {
-  font-family: arimo;
-  src: url("./assets/fonts/arimo.ttf");
-}
-
-@font-face {
   font-family: DIN-ALT;
   src: url("./assets/fonts/DIN-ALT.otf");
 }
 
-.white { color: white; }
-.black { color: black; }
-.green { color: green; }
-.purple { color: purple; }
-
 body {
-  background-color: black;
+  background-color: white;
   margin:0;
   width: 100%;
   height: 100%;
@@ -25,364 +15,111 @@ body {
   overflow: hidden;
 }
 
-.container {
+.column {
   display: flex;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  transition: 2s transform;
-}
-
-.welcome {
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 
-.welcome_text {
-  font-family: DIN-ALT;
-  z-index: 555;
-  font-size: 5vw;
-  width: 100%;
-  line-height: 3vw;
-  text-align: center;
-  margin: auto;
-}
-
-.next_page, .prev_page, .left_page, .right_page {
-  font-size: 10vmin;
-  text-align: center;
-  animation: 1.2s glow ease-in-out alternate infinite;
-  z-index: 999;
-}
-
-.next_page {
-  bottom: 2%;
-}
-
-.right_page {
-  right: 2%;
-  animation-delay: 0.3s;
-}
-
-.prev_page {
-  top: 2%;
-  animation-delay: 0.6s;
-}
-
-.left_page {
-  left: 2%;
-  animation-delay: 0.9s;
-}
-
-.next_page:hover , .prev_page:hover, .left_page:hover, .right_page:hover {
-  cursor: pointer;
-}
-
-.profile {
+.row {
+  display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  margin: auto;
 }
 
-.profile-arrows {
+.intro-container {
   position: absolute;
-  height: 5px;
-  display: flex;
-  transform: translateY(8vh);
-  width: 0;
-  transition: 0.5s width;
-}
-
-.arrow-line {
-  color: white;
-  stroke: white;
-  stroke-width: 3px;
-}
-
-.arrow-head {
-  height: 5px;
-  width: 5px;
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
-  position: absolute;
-}
-
-.arrow-r {
-  right: 0;
-  transform: translateX(10px) translateY(-3px) rotateZ(-45deg);
-}
-
-.arrow-l {
-  left: 0;
-  transform: translateX(-10px) translateY(-3px) rotateZ(135deg);
-}
-
-.left_page, .right_page {
-  position: absolute;
-}
-
-.page {
-  display: flex;
+  z-index: 999;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  transition: 2s transform;
 }
 
-.profile-1 {
-  position: absolute;
-  right: -200%;
+.ink-ball-container {
+
 }
 
-.profile-text {
+.ink-ball {
+  cursor: pointer;
+}
+
+.bobUpDown {
+  animation: 1s bobUpDown ease-in-out infinite;
+}
+
+.splash {
+  animation: 3s splash ease-in forwards;
+}
+
+.splashFade {
+  animation: 3s splashFade forwards;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.name-text {
   font-family: DIN-ALT;
-  z-index: 555;
+  color: black;
   font-size: 5vw;
-  width: 100%;
-  line-height: 3vw;
   text-align: center;
   margin: auto;
-}
-
-.profile-bg1 {
-  position: absolute;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/pictures/laptop.jpg");
-  background-size: cover;
-  filter: blur(2px) grayscale(100%) brightness(0.7);
-}
-
-.profile-2 {
-  position: absolute;
-  right: -400%;
-}
-
-.profile-bg2 {
-  position: absolute;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/pictures/sancat.jpg");
-  background-size: cover;
-  filter: blur(2px) grayscale(100%) brightness(0.7);
-}
-
-.profile-3 {
-  position: absolute;
-  right: -600%;
-}
-
-.profile-bg3 {
-  position: absolute;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/pictures/rockclimbing.jpg");
-  background-size: cover;
-  filter: blur(2px) grayscale(100%) brightness(0.7);
-}
-
-.column {
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-.languages {
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon_container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin:auto;
-}
-
-.icon_card {
-  opacity: 0.7;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  height: calc(100% + 20vh);
-  width: 15%;
-}
-
-.icon_line {
-  height: 5px;
-  width: 0;
-}
-
-.icon_card i {
-  font-size: 10vw;
-  margin-bottom: 1vw;
-}
-
-.icon_card:hover {
-  opacity: 1;
-  transition: width 0.3s;
-  width: 20%;
-}
-
-.icon_card:hover > .icon_card_text {
-  transition: font-size 1s;
-  font-size: 1.5vw;
-  transition: opacity 1s;
-  opacity: 1;
-}
-
-.icon_card:hover > .icon_card i {
-  transition: font-size 1s;
-  font-size: 15vw;
-}
-
-.icon_card:hover > .icon_line {
-  transition: width 0.3s;
-  width: 100%
-}
-
-.icon_card_text {
-  color: white;
-  opacity: 0;
-  font-size: 0.5vw;
-  text-align: center;
-}
-
-.fadeIn {
-  animation: 0.5s fadeIn ease-in-out forwards;
-}
-
-.fadeOut {
-  animation: 0.5s fadeOut ease-in-out forwards;
 }
 
 @keyframes bobUpDown {
   0% {
-    transition: transformY(0);
-  }
-
-  25% {
-    transition: transformY(1vmin);
+    transform: translateY(0);
   }
 
   50% {
-    transition: transformY(0);
-  }
-
-  75% {
-    transition: transformY(-1vmin);
+    transform: translateY(-50px);
   }
 
   100% {
-    transition: transformY(0);
+    transform: translateY(0px);
   }
 }
 
-@keyframes bobDownUp {
+@keyframes splash {
   0% {
-    transition: transformY(0);
+    transform: scale(1);
   }
 
-  25% {
-    transition: transformY(-1vmin);
+  14% {
+    transform: scale(50);
+  }
+  28% {
+    transform: scale(50);
+    opacity: 1;
   }
 
-  50% {
-    transition: transformY(0);
+  56% {
+
   }
 
-  75% {
-    transition: transformY(1vmin);
+  94% {
+
   }
 
   100% {
-    transition: transformY(0);
-  }
-}
-
-@keyframes bobLeftRight {
-  0% {
-    transition: transformX(0);
-  }
-
-  25% {
-    transition: transformX(1vmin);
-  }
-
-  50% {
-    transition: transformX(0);
-  }
-
-  75% {
-    transition: transformX(-1vmin);
-  }
-
-  100% {
-    transition: transformX(0);
-  }
-}
-
-@keyframes bobRightLeft {
-  0% {
-    transition: transformX(0);
-  }
-
-  25% {
-    transition: transformX(-1vmin);
-  }
-
-  50% {
-    transition: transformX(0);
-  }
-
-  75% {
-    transition: transformX(1vmin);
-  }
-
-  100% {
-    transition: transformX(0);
-  }
-}
-
-
-@keyframes glow {
-  from {
-    opacity: 0.8;
-  }
-
-  to {
-    opacity: 0.3;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
+    transform: scale(50);
     opacity: 0;
   }
-
-  100% {
-    opacity: 1;
-  }
 }
 
-@keyframes fadeOut {
+@keyframes splashFade {
   0% {
+    transform: scale(50);
     opacity: 1;
   }
 
   100% {
+    transform: scale(50);
     opacity: 0;
   }
 }
