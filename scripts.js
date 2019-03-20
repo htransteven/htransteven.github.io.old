@@ -1,10 +1,125 @@
 function init() {
 
+	loadArrowKeys();
 	loadPageButtons();
 }
 
 var currentMainPage = 0; //Home
 var currentProfilePage = 0;
+
+function loadArrowKeys() {
+	$(document).keydown(function(e) {
+    switch (e.keyCode) {
+      case 37: //LEFT
+				var pages = $(".page");
+
+				hidePageTransitions();
+				if(isProfileHome()) {
+					shrinkArrows();
+				}
+
+				if(currentProfilePage > 0){
+					currentProfilePage--;
+				} else {
+					currentProfilePage = pages.length - 1;
+				}
+
+				setTimeout(function(){
+					pages.each(function() {
+						var width = -100 * currentProfilePage;
+						$(this).css("transform", "translateX(" + width + "vw)");
+					});
+
+					setTimeout(function() {
+						if(isProfileHome()) {
+							extendArrows();
+						}
+						showPageTransitions();
+					}, 2000);
+				}, 500);
+        break;
+      case 39: //RIGHT
+				var pages = $(".page");
+
+				hidePageTransitions();
+				if(isProfileHome()) {
+					shrinkArrows();
+				}
+
+				if(currentProfilePage < pages.length - 1){
+					currentProfilePage++;
+				} else {
+					currentProfilePage = 0;
+				}
+
+				setTimeout(function(){
+					pages.each(function() {
+						var width = -100 * currentProfilePage;
+						$(this).css("transform", "translateX(" + width + "vw)");
+					});
+
+					setTimeout(function() {
+						if(isProfileHome()) {
+							extendArrows();
+						}
+						showPageTransitions();
+					}, 2000);
+				}, 500);
+				break;
+      case 38: //UP
+				var containers = $(".container");
+
+				hidePageTransitions();
+				if(isProfileHome()) {
+					shrinkArrows();
+				}
+				currentMainPage--;
+
+				setTimeout(function(){
+					containers.each(function() {
+						var height = -100 * currentMainPage;
+						$(this).css("transform", "translateY(" + height + "vh)");
+					});
+
+					setTimeout(function() {
+						if(isProfileHome()) {
+							extendArrows();
+						}
+						showPageTransitions();
+					}, 2000);
+				}, 500);
+				break;
+      case 40: //DOWN
+				var containers = $(".container");
+
+				hidePageTransitions();
+				if(isProfileHome()) {
+					shrinkArrows();
+				}
+				currentMainPage++;
+
+				setTimeout(function(){
+					containers.each(function() {
+						var height = -100 * currentMainPage;
+						$(this).css("transform", "translateY(" + height + "vh)");
+					});
+
+					setTimeout(function() {
+						if(isProfileHome()) {
+							extendArrows();
+						}
+						showPageTransitions();
+					}, 2000);
+				}, 500);
+        break;
+		}
+
+		$('*').off('keyup keydown keypress');
+		setTimeout(function() {
+			loadArrowKeys();
+		}, 3000);
+	});
+}
 
 function loadPageButtons() {
 
@@ -38,7 +153,6 @@ function loadPageButtons() {
 
 	prevbuttons.click(function(){
 			var containers = $(".container");
-
 
 			hidePageTransitions();
 			if(isProfileHome()) {
