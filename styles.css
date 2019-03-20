@@ -68,7 +68,33 @@ body {
   color: black;
   font-size: 5vw;
   text-align: center;
-  margin: auto;
+}
+
+.name-line-container {
+  display: flex;
+  justify-content: center;
+  height: 5px;
+  width: 0;
+  transition: 0.5s width;
+}
+
+.name-line-svg {
+  color: black;
+  stroke: black;
+  stroke-width: 3px;
+  width: 100%;
+}
+
+.lineExtend {
+  animation: lineExtend 0.3s ease-in-out forwards;
+}
+
+.occupation-text {
+  font-family: DIN-ALT;
+  color: black;
+  font-size: 2vw;
+  text-align: center;
+  margin-top: 0;
 }
 
 @keyframes bobUpDown {
@@ -112,14 +138,12 @@ body {
   }
 }
 
-@keyframes splashFade {
-  0% {
-    transform: scale(50);
-    opacity: 1;
+@keyframes lineExtend {
+  from {
+    width: 0;
   }
 
-  100% {
-    transform: scale(50);
-    opacity: 0;
+  to {
+    width: 100%;
   }
 }
