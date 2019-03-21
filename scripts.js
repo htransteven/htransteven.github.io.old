@@ -1,5 +1,5 @@
 var ms = 1000;
-var splashTime = 3.5 * ms;
+var splashTime = 2.5 * ms;
 
 var mainPage;
 var inkBall;
@@ -21,11 +21,13 @@ class InkBall {
   loadClick(){
     var ball = this.elem;
     ball.click(function() {
+      ball.removeClass("bounce");
       ball.addClass("splash");
+      $(".ink-ball-shadow").hide();
       setTimeout(function() {
         mainPage.show();
         mainPage.waitExtendNameLine();
-      }, 250);
+      }, 150);
       setTimeout(function() {
         $(".intro-container").hide();
       }, splashTime);
@@ -40,6 +42,8 @@ class MainPage {
 
   show(){
     this.elem.show();
+    this.elem.css("transition", "background-color 2s");
+    this.elem.css("background-color", "white");
   }
   hide() {
     this.elem.hide();
