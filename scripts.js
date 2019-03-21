@@ -43,7 +43,7 @@ class MainPage {
   show(){
     this.elem.show();
     this.elem.css("transition", "background-color 2s");
-    this.elem.css("background-color", "white");
+    this.elem.css("background-color", "#f2f2f2");
   }
   hide() {
     this.elem.hide();

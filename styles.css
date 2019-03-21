@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: #f2f2f2;
   margin:0;
   width: 100%;
   height: 100%;
@@ -47,9 +47,9 @@ body {
 }
 
 .ink-ball-shadow {
-  background: radial-gradient(50% 50%, #000 0%, #fff 100%);
+  background: radial-gradient(50% 50%, #000 0%, #f2f2f2 100%);
   height: 50px;
-  width: 100px;
+  width: 200px;
   animation: grow 0.625s infinite alternate;
   position: absolute;
   bottom: 0;
@@ -78,7 +78,7 @@ body {
 .main-container {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #f2f2f2;
 }
 
 .name-text {
@@ -155,22 +155,6 @@ body {
   }
   100% {
     transform: scale(1.3,.90) translateY(0px);
-  }
-}
-
-/*1.3,.90*/
-
-@keyframes bobUpDown {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-50px);
-  }
-
-  100% {
-    transform: translateY(0px);
   }
 }
 
