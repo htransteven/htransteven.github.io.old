@@ -50,10 +50,10 @@ body {
   background: radial-gradient(50% 50%, #000 0%, #fff 100%);
   height: 50px;
   width: 100px;
-  animation: grow 0.75s infinite alternate;
+  animation: grow 0.625s infinite alternate;
   position: absolute;
   bottom: 0;
-  transform: translateY(-395px);
+  transform: translateY(-400px);
   opacity: 0.7;
 }
 
@@ -69,10 +69,6 @@ body {
     width: 15px;
     opacity: 0.1;
   }
-}
-
-.bobUpDown {
-  animation: 1s bobUpDown ease-in-out infinite;
 }
 
 .splash {
@@ -120,7 +116,7 @@ body {
 }
 
 .bounce {
-  animation: 1.5s bounceUp linear infinite;
+  animation: 1.25s bounceUp linear infinite;
 }
 
 @keyframes bounceUp {
