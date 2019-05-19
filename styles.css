@@ -135,7 +135,7 @@ body {
   font-weight: 600;
   color: black;
   text-align: center;
-  line-height: 1.5em;
+  margin-bottom: 15px;
 }
 
 .exp-desc {
@@ -155,5 +155,12 @@ body {
 
 .exp-desc-lang i {
   margin: 0 10px;
-  color: rgba(0,0,0,0.8);
+  color: black;
+  filter: grayscale(1);
+  transition: all 0.3s;
+}
+
+.exp-desc-lang i:hover {
+  margin: 0 10px;
+  filter: grayscale(0);
 }
