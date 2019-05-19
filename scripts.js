@@ -26,8 +26,8 @@ class InkBall {
       $(".ink-ball-shadow").hide();
       setTimeout(function() {
         mainPage.show();
-        mainPage.waitExtendNameLine();
-      }, 150);
+        mainPage.waitExtendLandingSVG();
+      }, 250);
       setTimeout(function() {
         $(".intro-container").hide();
       }, splashTime);
@@ -49,7 +49,7 @@ class MainPage {
     this.elem.hide();
   }
 
-  waitExtendNameLine() {
+  waitExtendLandingSVG() {
     setTimeout(function() {
       $(".name-line-container").addClass("lineExtend");
     }, splashTime / 2);
