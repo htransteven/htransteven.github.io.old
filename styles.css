@@ -155,7 +155,7 @@ body {
 
 .exp-desc-lang i {
   margin: 0 10px;
-  color: black;
+  color: rgba(0,0,0,1);
   filter: grayscale(1);
   transition: all 0.3s;
 }
@@ -163,4 +163,8 @@ body {
 .exp-desc-lang i:hover {
   margin: 0 10px;
   filter: grayscale(0);
+}
+
+.devicon-github-plain:hover, .devicon-atom-original:hover{
+  color: rgb(104,33,122);
 }
