@@ -13,7 +13,7 @@ body {
 }
 
 .content-wrapper {
-  margin: 0 300px;
+  margin: 150px 300px 0 300px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -28,7 +28,12 @@ body {
   padding-bottom: 25px;
   margin-bottom: 25px;
   border-bottom: 3px black solid;
-
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: calc(100% - 600px);
+  background: #f2f2f2;
+  transform: translateX(-50%);
 }
 
 .title-name {
@@ -48,54 +53,24 @@ body {
   transition: all 0.5s;
 }
 
-@media only screen and (max-width: 1400px){
-  .content-wrapper {
-    margin: 0 200px;
-  }
+.about-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
 }
-@media only screen and (max-width: 1175px){
-  .title-name {
-    font-size: 50px;
-  }
-  .title-school {
-    font-size: 15px;
-  }
+
+.about-img {
+  width: 500px;
+  height: auto;
 }
-@media only screen and (max-width: 950px){
-  .content-wrapper {
-    margin: 0 150px;
-  }
-}
-@media only screen and (max-width: 830px){
-  .content-wrapper {
-    margin: 0 100px;
-  }
-}
-@media only screen and (max-width: 730px){
-  .content-wrapper {
-    margin: 0 75px;
-  }
-}
-@media only screen and (max-width: 675px){
-  .content-wrapper {
-    margin: 0 50px;
-  }
-}
-@media only screen and (max-width: 630px){
-  .content-wrapper {
-    margin: 0 25px;
-  }
-}
-@media only screen and (max-width: 575px){
-  .content-wrapper {
-    margin: 0 10px;
-  }
-  .title-name {
-    font-size: 35px;
-  }
-  .title-school {
-    font-size: 11.5px;
-  }
+
+.about-desc {
+  font-family: Arial;
+  font-size: 20px;
+  color: rgba(0,0,0,0.7);
+  text-align: center;
 }
 
 .school-wrapper {
@@ -167,4 +142,60 @@ body {
 
 .devicon-github-plain:hover, .devicon-atom-original:hover{
   color: rgb(104,33,122);
+}
+
+.invis {
+  opacity: 0;
+}
+
+.fadeIn {
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1175px){
+  .content-wrapper {
+    margin: 135px 200px 0 200px;
+  }
+  .title-wrapper {
+    width: calc(100% - 400px);
+  }
+  .title-name {
+    font-size: 50px;
+  }
+  .title-school {
+    font-size: 15px;
+  }
+  .about-img {
+    width: 300px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 950px){
+  .about-img {
+    width: 250px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 750px){
+  .content-wrapper {
+    margin: 100px 100px 0 100px;
+  }
+  .title-wrapper {
+    width: calc(100% - 200px);
+  }
+  .title-name {
+    font-size: 35px;
+  }
+  .title-school {
+    font-size: 11.5px;
+  }
+}
+@media only screen and (max-width: 575px){
+  .content-wrapper {
+    margin: 75px 50px 0 50px;
+  }
+  .title-wrapper {
+    width: calc(100% - 100px);
+  }
 }
