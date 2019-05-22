@@ -203,7 +203,7 @@ body {
 
 @media only screen and (max-width: 1175px){
   .content-wrapper {
-    margin: 135px 200px 0 200px;
+    margin: 120px 200px 0 200px;
   }
   .title-wrapper {
     width: calc(100% - 400px);
@@ -212,7 +212,7 @@ body {
     font-size: 15px;
   }
   .about-img {
-    width: 300px;
+    width: 250px;
     height: auto;
   }
 }
@@ -248,6 +248,16 @@ body {
   }
 }
 @media only screen and (max-height: 575px){
+  .content-wrapper {
+    margin: 120px 50px 0 50px;
+  }
+}
+@media only screen and (max-width: 450px){
+  .content-wrapper {
+    margin: 120px 50px 0 50px;
+  }
+}
+@media only screen and (max-width: 420px){
   .content-wrapper {
     margin: 150px 50px 0 50px;
   }
