@@ -166,15 +166,47 @@ body {
   opacity: 1;
 }
 
+@media only screen and (max-width: 1600px){
+  .about-desc {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  .title-name {
+    font-size: 50px;
+  }
+  .about-desc {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .about-wrapper {
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .about-img {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .exp-desc-lang {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  .exp-desc-lang i {
+    margin: 10px;
+  }
+}
+
 @media only screen and (max-width: 1175px){
   .content-wrapper {
     margin: 135px 200px 0 200px;
   }
   .title-wrapper {
     width: calc(100% - 400px);
-  }
-  .title-name {
-    font-size: 50px;
   }
   .title-school {
     font-size: 15px;
@@ -186,8 +218,11 @@ body {
 }
 @media only screen and (max-width: 950px){
   .about-img {
-    width: 250px;
+    width: 200px;
     height: auto;
+  }
+  .content-wrapper {
+    margin: 180px 200px 0 200px;
   }
 }
 @media only screen and (max-width: 750px){
@@ -206,9 +241,14 @@ body {
 }
 @media only screen and (max-width: 575px){
   .content-wrapper {
-    margin: 75px 50px 0 50px;
+    margin: 150px 50px 0 50px;
   }
   .title-wrapper {
     width: calc(100% - 100px);
+  }
+}
+@media only screen and (max-width: 320px){
+  .title-name {
+    font-size: 30px;
   }
 }
