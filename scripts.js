@@ -9,6 +9,6 @@ function init() {
       $(obj).removeClass("invis");
     }, timer, this);
 
-    timer += 300;
+    timer += 200;
   });
 }
