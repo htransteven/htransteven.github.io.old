@@ -49,6 +49,8 @@ function loadMenuClickEvent(){
 
     if(!menuOpen){
       let itemTimer = 0;
+      titleArrow.toggleClass("fa-caret-down");
+      titleArrow.toggleClass("fa-caret-up");
       menuItems.each(function(){
         setTimeout(function(item){
           $(item).css("height", `${menuItemHeight}px`);
@@ -60,6 +62,8 @@ function loadMenuClickEvent(){
 
     } else {
       let itemTimer = 0;
+      titleArrow.toggleClass("fa-caret-down");
+      titleArrow.toggleClass("fa-caret-up");
       $(menuItems.get().reverse()).each(function(){ //reverse fade order of items
         setTimeout(function(item){
           $(item).css("opacity", "0");
