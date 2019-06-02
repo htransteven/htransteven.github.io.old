@@ -49,8 +49,7 @@ function loadMenuClickEvent(){
 
     if(!menuOpen){
       let itemTimer = 0;
-      titleArrow.toggleClass("fa-caret-down");
-      titleArrow.toggleClass("fa-caret-up");
+
       menuItems.each(function(){
         setTimeout(function(item){
           $(item).css("height", `${menuItemHeight}px`);
@@ -58,12 +57,16 @@ function loadMenuClickEvent(){
         }, itemTimer, this);
         itemTimer += 100;
       });
+
+      setTimeout(function(titleArrow){
+        titleArrow.toggleClass("fa-caret-down");
+        titleArrow.toggleClass("fa-caret-up");
+      }, (100 * menuItems.length) + 150, titleArrow);
       menuOpen = true;
 
     } else {
       let itemTimer = 0;
-      titleArrow.toggleClass("fa-caret-down");
-      titleArrow.toggleClass("fa-caret-up");
+      
       $(menuItems.get().reverse()).each(function(){ //reverse fade order of items
         setTimeout(function(item){
           $(item).css("opacity", "0");
@@ -71,6 +74,11 @@ function loadMenuClickEvent(){
         }, itemTimer, this);
         itemTimer += 100;
       });
+
+      setTimeout(function(titleArrow){
+        titleArrow.toggleClass("fa-caret-down");
+        titleArrow.toggleClass("fa-caret-up");
+      }, (100 * menuItems.length) + 150, titleArrow);
       menuOpen = false;
     }
   });
