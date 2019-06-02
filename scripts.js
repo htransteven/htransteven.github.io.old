@@ -78,8 +78,6 @@ function loadMenuClickEvent(){
 
 function entryAnimation() {
 
-  loadMenuClickEvent();
-
   //arrow bounce effect
   var titleArrow = $(".title-downarrow");
   setTimeout(function(titleArrow) {
@@ -107,6 +105,9 @@ function entryAnimation() {
   setTimeout(function() {
     displayAll();
     unHideAll();
+
+
+    loadMenuClickEvent();
   }, 2000)
 }
 
