@@ -1,45 +1,107 @@
 var timer = 0;
 var menuOpen = false;
+var pageCount = 1;
 
-function displayNone() {
-  var aboutWrapper = $(".about-wrapper");
-  var schoolWrapper = $(".school-wrapper");
-  var expWrapper = $(".exp-wrapper");
+class PageController{
+  constructor(){
+    this.pages = [];
+    this.activePageID = 0;
+    this.updating = false;
+  }
 
-  aboutWrapper.hide();
-  schoolWrapper.hide();
-  expWrapper.each(function(){
-    $(this).hide();
-  });
+  loadPages(){
+    var pages = this.pages;
+    $(".content-page").each(function(){
+      $(this).hide();
+      let tempPage = new ContentPage($(this).attr("id"), $(this));
+      tempPage.loadFadeObjects();
+      pages.push(tempPage);
+    });
+  }
+
+  activatePage(pageID){
+    if(this.activePageID == pageID || this.updating == true){
+      return;
+    } else {
+      this.updating = true;
+    }
+
+    if(this.activePageID != 0){
+      this.pages[this.activePageID - 1].update(false);
+    }
+
+    setTimeout(function(obj, pageID){
+      obj.pages[pageID - 1].update(true);
+      obj.activePageID = pageID;
+    }, 1000, this, pageID)
+
+    setTimeout(function(self){
+      self.updating = false;
+    }, 150 * this.pages[pageID - 1].fadeObjs.length, this);
+  }
 }
 
-function displayAll() {
-  var aboutWrapper = $(".about-wrapper");
-  var schoolWrapper = $(".school-wrapper");
-  var expWrapper = $(".exp-wrapper");
+class ContentPage{
+  constructor(name, element){
+    this.name = name;
+    this.pageID = pageCount;
+    this.active = false;
+    this.elem = element; //JQuery obj
+    this.fadeObjs = $(`#${this.name} > .fade`);
+    pageCount++;
+  }
 
-  aboutWrapper.show();
-  schoolWrapper.show();
-  expWrapper.each(function(){
-    $(this).show();
-  });
+  loadFadeObjects(toggle){
+    var objs = this.fadeObjs;
+    $(`#${this.name} > * > .fade`).each(function(){
+      objs.push($(this));
+    });
+  }
+
+  update(toggle){
+    if(toggle){
+      timer = 0;
+      var self = this;
+      var page = this.elem;
+      var pageObj = this.fadeObjs
+
+      page.show();
+      this.active = toggle;
+      pageObj.each(function() {
+        setTimeout(function(obj){
+          $(obj).toggleClass("fadeIn");
+        }, timer, this);
+
+        setTimeout(function(obj){
+          $(obj).toggleClass("fadeOut");
+        }, timer, this);
+
+        timer += 150;
+      });
+
+    } else {
+      var self = this;
+      var page = this.elem;
+      var pageObj = this.fadeObjs;
+
+      page.toggleClass("fadeOut");
+
+      pageObj.each(function() {
+        $(this).toggleClass("fadeOut");
+        $(this).toggleClass("fadeIn");
+      });
+
+      setTimeout(function(page, pageObj){
+        page.toggleClass("fadeOut");
+        page.hide();
+        pageObj.active = false;
+      }, 1000, page, this);
+    }
+  }
 }
 
-function unHideAll(){
-  var invisObjs = $(".invis");
-  invisObjs.each(function() {
-    setTimeout(function(obj) {
-      $(obj).addClass("fadeIn");
-      $(obj).removeClass("invis");
-    }, timer, this);
-
-    timer += 150;
-  });
-}
-
-function loadMenuClickEvent(){
+function loadMenuClickEvent(pagecontroller){
   var titleArrow = $(".title-downarrow");
-
   titleArrow.click(function(){
     var titleObj = $(".title-wrapper");
     var titleMenu = $(".title-menu-wrapper");
@@ -66,7 +128,7 @@ function loadMenuClickEvent(){
 
     } else {
       let itemTimer = 0;
-      
+
       $(menuItems.get().reverse()).each(function(){ //reverse fade order of items
         setTimeout(function(item){
           $(item).css("opacity", "0");
@@ -81,6 +143,44 @@ function loadMenuClickEvent(){
       }, (100 * menuItems.length) + 150, titleArrow);
       menuOpen = false;
     }
+  });
+
+  var menuItems = $(".title-menu-item");
+  menuItems.click(function(){
+    var button = $(this);
+
+    switch(button.attr("name")){
+      case "home":
+        pagecontroller.activatePage(1);
+        break;
+      case "websites":
+        pagecontroller.activatePage(2);
+        break;
+      case "designs":
+        pagecontroller.activatePage(3);
+        break;
+    }
+  });
+}
+
+function loadLinkHoverAnimation(){
+  var expTitleObjs = $(".website-title");
+  expTitleObjs.hover(function(){
+    var children = $(this).children();
+    children.each(function(){
+      if($(this).is("i")){
+        //$(this).show();
+        $(this).css("opacity", "1");
+      }
+    });
+  }, function(){
+    var children = $(this).children();
+    children.each(function(){
+      if($(this).is("i")){
+        //$(this).hide();
+        $(this).css("opacity", "0");
+      }
+    });
   });
 }
 
@@ -110,16 +210,20 @@ function entryAnimation() {
     titleObj.css("transform", "translateX(-50%)");
   }, 1250, titleObj);
 
-  setTimeout(function() {
-    displayAll();
-    unHideAll();
-
-
-    loadMenuClickEvent();
-  }, 2000)
 }
 
 function init() {
-  displayNone();
+  var pc = new PageController();
+
   entryAnimation();
+
+  setTimeout(function(pc) {
+    loadMenuClickEvent(pc);
+    loadLinkHoverAnimation();
+  }, 2000, pc);
+
+  setTimeout(function(pc) {
+    pc.loadPages();
+    pc.activatePage(1);
+  }, 500, pc);
 }
