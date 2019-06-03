@@ -152,12 +152,14 @@ function loadMenuClickEvent(pagecontroller){
     switch(button.attr("name")){
       case "home":
         pagecontroller.activatePage(1);
+        titleArrow.trigger("click");
         break;
       case "websites":
         pagecontroller.activatePage(2);
+        titleArrow.trigger("click");
         break;
       case "designs":
-        pagecontroller.activatePage(3);
+        //pagecontroller.activatePage(3);
         break;
     }
   });
