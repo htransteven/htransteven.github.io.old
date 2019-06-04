@@ -102,10 +102,45 @@ class ContentPage{
 
 function loadMenuClickEvent(pagecontroller){
   var titleArrow = $(".title-downarrow");
+  var menuButton = $($(".title-menu-item").get(0));
+
+  menuButton.hover(function(){
+    menuButton.css("font-weight", "300");
+    menuButton.css("font-size", "20px");
+    menuButton.css("cursor", "pointer");
+    titleArrow.css("font-size", "35px");
+    titleArrow.css("cursor", "pointer");
+  }, function(){
+    menuButton.css("font-weight", "300");
+    menuButton.css("font-size", "15px");
+    menuButton.css("cursor", "auto");
+    titleArrow.css("font-size", "25px");
+    titleArrow.css("cursor", "auto");
+  });
+  titleArrow.hover(function(){
+    menuButton.css("font-weight", "300");
+    menuButton.css("font-size", "20px");
+    menuButton.css("cursor", "pointer");
+    titleArrow.css("font-size", "35px");
+    titleArrow.css("cursor", "pointer");
+  }, function(){
+    menuButton.css("font-weight", "300");
+    menuButton.css("font-size", "15px");
+    menuButton.css("cursor", "auto");
+    titleArrow.css("font-size", "25px");
+    titleArrow.css("cursor", "auto");
+  });
+
+  menuButton.click(function(){
+    titleArrow.trigger("click");
+  });
+
   titleArrow.click(function(){
     var titleObj = $(".title-wrapper");
     var titleMenu = $(".title-menu-wrapper");
-    var menuItems = titleMenu.children();
+    var menuItems = titleMenu.children().get();
+    menuItems.shift();
+    menuItems = $(menuItems);
     var menuItemHeight = 25;
     var extendMenuLength = menuItems.length * menuItemHeight;
 

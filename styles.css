@@ -115,6 +115,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 25px;
   transition: all 0.3s;
   width: 100%;
+  margin-top: -5px;
 }
 
 .title-downarrow::before {
@@ -151,9 +152,13 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
-.title-menu-item:hover {
-  font-weight: 600;
-  cursor: pointer;
+.title-menu-item:nth-of-type(1) {
+  height: auto;
+  opacity: 1;
+  transition: 0.2s opacity, 0.4s height, 0.3s font-size;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
 }
 
 .about-wrapper {
