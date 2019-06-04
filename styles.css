@@ -295,7 +295,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0px 10px;
 }
 
-.website-title i:nth-child(2) {
+.website-title i:nth-child(3) {
   transform: rotateZ(180deg);
 }
 
