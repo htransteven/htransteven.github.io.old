@@ -152,6 +152,11 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
+.title-menu-item:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .title-menu-item:nth-of-type(1) {
   height: auto;
   opacity: 1;

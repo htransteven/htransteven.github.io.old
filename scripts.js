@@ -263,5 +263,5 @@ function init() {
   setTimeout(function(pc) {
     pc.loadPages();
     pc.activatePage(1);
-  }, 500, pc);
+  }, 800, pc);
 }
