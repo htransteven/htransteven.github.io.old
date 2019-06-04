@@ -166,7 +166,7 @@ function loadMenuClickEvent(pagecontroller){
 }
 
 function loadLinkHoverAnimation(){
-  var expTitleObjs = $(".website-title");
+  var expTitleObjs = $(".website-title a");
   expTitleObjs.hover(function(){
     var children = $(this).children();
     children.each(function(){

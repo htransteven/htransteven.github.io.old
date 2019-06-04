@@ -259,7 +259,7 @@ body::-webkit-scrollbar-thumb {
   transform: translateY(-7px);
 }
 
-.exp-wrapper {
+.website-wrapper {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -280,7 +280,12 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.website-title:hover {
+.website-title a {
+  text-decoration: none;
+  color: #9c0000;
+}
+
+.website-title a:hover {
   cursor: pointer;
 }
 
@@ -403,9 +408,6 @@ body::-webkit-scrollbar-thumb {
   }
   .title-wrapper {
     width: calc(100% - 200px);
-  }
-  .content-wrapper {
-    margin: 100px 200px 0 200px;
   }
 }
 @media only screen and (max-width: 750px){
