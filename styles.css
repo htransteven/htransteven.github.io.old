@@ -9,7 +9,10 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  padding-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 body::-webkit-scrollbar {
@@ -37,7 +40,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .content-wrapper {
-  margin: 150px 300px 0 300px;
+  margin-top: 200px;
+  width: 55vw;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -47,6 +51,7 @@ body::-webkit-scrollbar-thumb {
 .content-page {
   transition: 0.2s all;
   margin-bottom: 50px;
+  width: 100%;
 }
 
 .title-wrapper {
@@ -63,7 +68,7 @@ body::-webkit-scrollbar-thumb {
   border-bottom: 3px #9c0000 solid;
   */
   position: fixed;
-  width: calc(100% - 550px);
+  width: 60vw;
 
   top: 50%;
   left: 50%;
@@ -96,18 +101,19 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.5s;
   width: 100%;
   margin-bottom: 5px;
+  font-size: 15px;
 }
 
 .title-name {
   font-family: DIN-ALT;
-  font-size: 75px;
+  font-size: 5em;
   font-weight: 600;
   color: #9c0000;
   text-align: center;
 }
 
 .title-school {
-  font-size: 20px;
+  font-size: 1.5em;
   color: rgba(0,0,0,0.7);
   text-align: center;
 }
@@ -179,22 +185,20 @@ body::-webkit-scrollbar-thumb {
 
 .about-images-wrapper {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+  justify-content: space-between;
   margin-bottom: 50px;
 }
 
 .about-img {
   width: auto;
-  height: 350px;
+  height: 20vw;
   transition: 0.5s all;
 }
 
 .about-img {
   box-shadow: 0 8px 6px 2px rgba(0,0,0,0.7);
-  margin-right: 20px;
 }
 
 .about-img-hover {
@@ -211,27 +215,29 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-titles-wrapper {
-
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 .about-title {
   display: none;
   font-family: DIN-ALT;
-  font-size: 45px;
+  font-size: 2em;
   font-weight: 600;
   color: #9c0000;
-  text-align: center;
+  text-align: left;
   transition: 0.5s opacity;
+  text-transform: uppercase;
 }
 
 .about-descs-wrapper{
-
+  font-size: 20px;
 }
 
 .about-desc {
   display: none;
   font-family: Arial;
-  font-size: 22px;
+  font-size: 1em;
   color: rgba(0,0,0,0.7);
   text-align: left;
   transition: 0.5s opacity;
@@ -265,7 +271,7 @@ body::-webkit-scrollbar-thumb {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  margin-top: 25px;
+  margin-bottom: 25px;
   background: white;
   box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.5);
 }
@@ -285,11 +291,18 @@ body::-webkit-scrollbar-thumb {
 .exp-text {
   margin: 10px;
   width: 100%;
+  font-size: 20px;
+}
+
+.exp-text-lang {
+  margin: 10px;
+  width: 100%;
+  font-size: 20px;
 }
 
 .exp-title {
   font-family: DIN-ALT;
-  font-size: 30px;
+  font-size: 1em;
   font-weight: 600;
   color: #9c0000;
   text-align: left;
@@ -298,7 +311,7 @@ body::-webkit-scrollbar-thumb {
 
 .exp-years {
   font-family: Arial;
-  font-size: 15px;
+  font-size: 0.65em;
   color: rgba(0,0,0,0.7);
   text-align: left;
   margin-top: 5px;
@@ -309,7 +322,7 @@ body::-webkit-scrollbar-thumb {
 .exp-desc {
   margin-top: 15px;
   font-family: Arial;
-  font-size: 20px;
+  font-size: 0.7em;
   color: rgba(0,0,0,0.7);
   text-align: left;
 }
@@ -319,12 +332,12 @@ body::-webkit-scrollbar-thumb {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  font-size: 50px;
+  font-size: 1em;
   margin-top: 15px;
 }
 
 .exp-desc-lang i {
-  margin: 0 10px;
+  margin-right: 10px;
   color: rgba(0,0,0,1);
   filter: grayscale(1);
   transition: all 0.3s;
@@ -341,7 +354,7 @@ body::-webkit-scrollbar-thumb {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  margin-top: 25px;
+  margin-bottom: 25px;
   background: white;
   box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.5);
 }
@@ -373,11 +386,12 @@ body::-webkit-scrollbar-thumb {
   justify-content: flex-start;
   margin: 10px;
   width: 100%;
+  font-size: 20px;
 }
 
 .website-title {
   font-family: DIN-ALT;
-  font-size: 30px;
+  font-size: 1em;
   font-weight: 600;
   color: #9c0000;
   text-align: center;
@@ -400,31 +414,33 @@ body::-webkit-scrollbar-thumb {
 .website-title i {
   transition: 0.3s opacity;
   opacity: 0;
-  padding: 0px 10px;
+  margin-right: 5px;
 }
 
 .website-title i:nth-child(3) {
   transform: rotateZ(180deg);
+  margin-right: 0;
+  margin-left: 5px;
 }
 
 .website-years {
   font-family: Arial;
-  font-size: 15px;
+  font-size: 0.65em;
   color: rgba(0,0,0,0.7);
   text-align: center;
   margin-top: 5px;
   text-transform: uppercase;
   font-weight: 600;
-  margin-left: 30px;
+  margin-left: 12px;
 }
 
 .website-desc {
   margin-top: 15px;
   font-family: Arial;
-  font-size: 20px;
+  font-size: 0.7em;
   color: rgba(0,0,0,0.7);
   text-align: left;
-  margin-left: 30px;
+  margin-left: 12px;
 }
 
 .devicon-github-plain:hover, .devicon-atom-original:hover{
@@ -455,124 +471,87 @@ body::-webkit-scrollbar-thumb {
   font-size: 65px;
 }
 
-@media only screen and (max-width: 1600px){
-  .about-desc {
+@media only screen and (max-width: 1500px){
+  .title-wrapper {
+    width: 70vw;
+  }
+  .content-wrapper {
+    width: 65vw;
+  }
+  .about-img {
+    height: 25vw;
+  }
+}
+
+@media only screen and (max-width: 1100px){
+  .content-page {
+    margin-top: 150px;
+  }
+  .title-text-wrapper {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .title-text-wrapper {
+    font-size: 8px;
+  }
+  .website-wrapper {
+    flex-flow: column nowrap;
+  }
+  .website-img, .website-img img {
+    width: 100%;
+    height: auto;
+  }
+  .website-text {
+    width: auto;
+  }
+  .website-title i {
+    display: none;
+  }
+  .website-years, .website-desc {
+    margin-left: 0;
+  }
+  .exp-wrapper {
+    flex-flow: column nowrap;
+  }
+  .exp-img, .exp-img img {
+    width: 100%;
+    height: auto;
+  }
+  .exp-text {
+    width: auto;
+  }
+  .exp-text-lang {
+    align-self: flex-start;
+  }
+  .exp-title i {
+    display: none;
+  }
+  .exp-years, .exp-desc {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-height: 700px){
+  .content-page {
+    margin-top: 100px;
+  }
+  .about-titles-wrapper {
     font-size: 20px;
   }
-}
-
-@media only screen and (max-width: 1400px){
-  .title-name {
-    font-size: 50px;
-  }
-  .about-desc {
-    font-size: 17px;
-  }
-}
-
-@media only screen and (max-width: 1200px){
-  .about-wrapper {
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-  .about-img {
-    margin: 0;
-    margin-bottom: 20px;
-  }
-  .exp-desc-lang {
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
-  .exp-desc-lang i {
-    margin: 10px;
-  }
-}
-
-@media only screen and (max-width: 1175px){
-  .content-wrapper {
-    margin: 120px 200px 0 200px;
-  }
-  .title-wrapper {
-    width: calc(100% - 350px);
-  }
-  .title-school {
+  .about-descs-wrapper {
     font-size: 15px;
   }
-  .about-img {
-    width: 250px;
-    height: auto;
+}
+
+@media only screen and (max-width: 585px){
+  .title-text-wrapper {
+    font-size: 5px;
   }
 }
-@media only screen and (max-width: 950px){
-  .content-wrapper {
-    margin: 100px 100px 0 100px;
-  }
-  .about-img {
-    width: 200px;
-    height: auto;
-  }
-  .title-name {
-    font-size: 45px;
-  }
-  .title-wrapper {
-    width: calc(100% - 175px);
-  }
-}
-@media only screen and (max-width: 750px){
-  .content-wrapper {
-    margin: 100px 100px 0 100px;
-  }
-  .title-wrapper {
-    width: calc(100% - 175px);
-  }
-  .title-name {
-    font-size: 35px;
-  }
-  .title-school {
-    font-size: 11.5px;
-  }
-  .social-wrapper {
-    bottom: auto;
-    top: 0;
-    right: 0;
-    align-items: flex-start;
-    width: 100%;
-    z-index: 999999;
-  }
-}
-@media only screen and (max-width: 575px){
-  .content-wrapper {
-    margin: 100px 50px 0 50px;
-  }
-  .title-wrapper {
-    width: calc(100% - 80px);
-  }
-  .title-name {
-    font-size: 30px;
-  }
-}
-@media only screen and (max-width: 450px){
-  .content-wrapper {
-    margin: 120px 50px 0 50px;
-  }
-  .title-name {
-    font-size: 25px;
-  }
-}
-@media only screen and (max-width: 420px){
-  .content-wrapper {
-    margin: 100px 50px 0 50px;
-  }
-}
-@media only screen and (max-width: 320px){
-  .title-name {
-    font-size: 30px;
-  }
-}
-@media only screen and (max-height: 575px){
-  .content-wrapper {
-    margin: 130px 50px 0 50px;
+@media only screen and (max-width: 375px){
+  .title-text-wrapper {
+    font-size: 4px;
   }
 }
