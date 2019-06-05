@@ -298,6 +298,7 @@ body::-webkit-scrollbar-thumb {
   margin: 10px;
   width: 100%;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .exp-title {
@@ -332,7 +333,7 @@ body::-webkit-scrollbar-thumb {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  font-size: 1em;
+  font-size: 2.2em;
   margin-top: 15px;
 }
 
@@ -341,10 +342,10 @@ body::-webkit-scrollbar-thumb {
   color: rgba(0,0,0,1);
   filter: grayscale(1);
   transition: all 0.3s;
+  margin-bottom: 10px;
 }
 
 .exp-desc-lang i:hover {
-  margin: 0 10px;
   filter: grayscale(0);
   transform: translateY(-7px);
 }
@@ -484,7 +485,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-width: 1100px){
-  .content-page {
+  .content-wrapper {
     margin-top: 150px;
   }
   .title-text-wrapper {
@@ -534,7 +535,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-height: 700px){
-  .content-page {
+  .content-wrapper {
     margin-top: 100px;
   }
   .about-titles-wrapper {
@@ -553,5 +554,8 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 375px){
   .title-text-wrapper {
     font-size: 4px;
+  }
+  .exp-desc-lang i {
+    margin-bottom: 10px;
   }
 }
