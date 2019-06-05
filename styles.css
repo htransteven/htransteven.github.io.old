@@ -124,6 +124,7 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.3s;
   width: 100%;
   margin-top: -5px;
+  user-select: none;
 }
 
 .title-downarrow::before {
@@ -158,6 +159,7 @@ body::-webkit-scrollbar-thumb {
   transition: 0.2s opacity, 0.4s height;
   height: 0;
   opacity: 0;
+  user-select: none;
 }
 
 .title-menu-item:hover {
@@ -195,10 +197,8 @@ body::-webkit-scrollbar-thumb {
   width: auto;
   height: 20vw;
   transition: 0.5s all;
-}
-
-.about-img {
   box-shadow: 0 8px 6px 2px rgba(0,0,0,0.7);
+  user-select: none;
 }
 
 .about-img-hover {
@@ -283,7 +283,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .exp-img {
-  user-select: none;
   width: 350px;
   height: 170px;
 }
@@ -368,6 +367,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .website-img {
+  user-select: none;
   text-decoration: none;
   border: none;
   user-select: none;
