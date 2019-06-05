@@ -371,6 +371,7 @@ body::-webkit-scrollbar-thumb {
   align-items: flex-start;
   justify-content: flex-start;
   margin: 10px;
+  width: 100%;
 }
 
 .website-title {
