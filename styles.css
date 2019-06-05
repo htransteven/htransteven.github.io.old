@@ -46,6 +46,7 @@ body::-webkit-scrollbar-thumb {
 
 .content-page {
   transition: 0.2s all;
+  margin-bottom: 50px;
 }
 
 .title-wrapper {
