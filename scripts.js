@@ -166,6 +166,7 @@ class ImageTextPair{
     this.desc.show();
     this.title.addClass("fadeIn");
     this.desc.addClass("fadeIn");
+    this.img.css("filter", "grayscale(0)");
     setTimeout(function(pair){
       pair.title.removeClass("fadeOut");
       pair.desc.removeClass("fadeOut");
@@ -197,6 +198,7 @@ function loadMenuClickEvent(pagecontroller){
     menuButton.css("cursor", "pointer");
     titleArrow.css("font-size", "35px");
     titleArrow.css("cursor", "pointer");
+    $(".fadelayer").css("-webkit-mask-image", "linear-gradient(180deg, rgba(255,255,255,1) 85%, rgba(255,255,255,0) 90%)");
   }, function(){
     if(menuOpen){
       return;
@@ -206,6 +208,7 @@ function loadMenuClickEvent(pagecontroller){
     menuButton.css("cursor", "auto");
     titleArrow.css("font-size", "25px");
     titleArrow.css("cursor", "auto");
+    $(".fadelayer").css("-webkit-mask-image", "linear-gradient(180deg, rgba(255,255,255,1) 85%, rgba(255,255,255,0) 100%)");
   });
   titleArrow.hover(function(){
     menuButton.css("font-weight", "300");
