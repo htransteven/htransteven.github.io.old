@@ -295,6 +295,10 @@ function loadMenuClickEvent(pagecontroller){
         pagecontroller.activatePage(3);
         titleArrow.trigger("click");
         break;
+      case "contact":
+        pagecontroller.activatePage(4);
+        titleArrow.trigger("click");
+        break;
     }
   });
 }
@@ -314,6 +318,25 @@ function loadLinkHoverAnimation(){
     var children = $(this).children();
     children.each(function(){
       if($(this).is("i")){
+        //$(this).hide();
+        $(this).css("opacity", "0");
+      }
+    });
+  });
+
+  var contactTitleObj = $(".contact-wrapper");
+  contactTitleObj.hover(function(){
+    var children = $(this).children();
+    children.each(function(){
+      if($(this).is("i") && $(this).hasClass("fa-caret-right")){
+        //$(this).show();
+        $(this).css("opacity", "1");
+      }
+    });
+  }, function(){
+    var children = $(this).children();
+    children.each(function(){
+      if($(this).is("i") && $(this).hasClass("fa-caret-right")){
         //$(this).hide();
         $(this).css("opacity", "0");
       }

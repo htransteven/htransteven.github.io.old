@@ -467,28 +467,87 @@ body::-webkit-scrollbar-thumb {
   color: rgb(104,33,122);
 }
 
-.social-wrapper {
-  position: fixed;
+.contact-wrapper {
   display: flex;
   flex-flow: row nowrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  bottom: 10px;
-  right: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+}
+
+.contact-img {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.contact-img i{
+  color: #9c0000;
   font-size: 50px;
 }
 
-.social-wrapper a {
-  margin: 5px;
+.contact-text {
+  font-size: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 0 10px 15px;
+  border-left: 3px solid #9c0000;
 }
 
-.social-wrapper i {
-  transition: all 0.3s;
+.contact-title {
+  font-family: DIN-ALT;
+  font-size: 1em;
+  font-weight: 600;
+  color: #9c0000;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.contact-title a {
+  text-decoration: none;
   color: #9c0000;
 }
 
-.social-wrapper i:hover {
-  font-size: 65px;
+.contact-title a:hover {
+  cursor: pointer;
+}
+
+.contact-wrapper > i {
+  transition: 0.3s opacity;
+  opacity: 0;
+  font-size: 50px;
+  transform: translateX(-25px);
+  color: #9c0000;
+}
+
+.contact-title i:nth-child(3) {
+  transform: rotateZ(180deg);
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.contact-addon {
+  font-family: Arial;
+  font-size: 0.65em;
+  color: rgba(0,0,0,0.7);
+  text-align: left;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contact-desc {
+  margin-top: 15px;
+  font-family: Arial;
+  font-size: 0.7em;
+  color: rgba(0,0,0,0.7);
+  text-align: left;
 }
 
 @media only screen and (max-width: 1500px){
@@ -558,6 +617,25 @@ body::-webkit-scrollbar-thumb {
   .exp-years, .exp-desc {
     margin-left: 0;
   }
+  .contact-wrapper {
+    flex-flow: column nowrap;
+  }
+  .contact-img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .contact-wrapper > i {
+    display: none;
+  }
+  .contact-text {
+    padding: 0;
+    border: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-desc {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-height: 700px){
@@ -570,11 +648,20 @@ body::-webkit-scrollbar-thumb {
   .about-descs-wrapper {
     font-size: 15px;
   }
+  .contact-img {
+    min-width: 35px;
+  }
+  .contact-addon {
+    font-size: 0.5em;
+  }
 }
 
 @media only screen and (max-width: 585px){
   .title-text-wrapper {
     font-size: 5px;
+  }
+  .contact-addon {
+    font-size: 0.4em;
   }
 }
 @media only screen and (max-width: 375px){
